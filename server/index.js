@@ -10,6 +10,10 @@ import generalRoutes from './routes/general.js';
 import managementRoutes from './routes/management.js';
 import salesRoutes from './routes/sales.js';
 
+/* DUMMY DATA */
+// import User from './models/User.js';
+// import { dataUser } from './data/index.js';
+
 /* CONFIGURATION */
 dotenv.config();
 const app = express();
@@ -37,6 +41,8 @@ mongoose
   .then(() => {
     console.log(`DB: CONNECTED`);
     app.listen(PORT, () => console.log(`API: ${PORT}`));
+    // DUMMY DATA
+    // User.insertMany(dataUser);
   })
   .catch((error) => {
     console.log(error);
