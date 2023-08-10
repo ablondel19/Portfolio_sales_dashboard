@@ -11,8 +11,10 @@ import managementRoutes from './routes/management.js';
 import salesRoutes from './routes/sales.js';
 
 /* DUMMY DATA */
+// import { dataUser, dataProduct, dataProductStat } from './data/index.js';
 // import User from './models/User.js';
-// import { dataUser } from './data/index.js';
+// import Product from './models/Product.js';
+// import ProductStat from './models/ProductStat.js';
 
 /* CONFIGURATION */
 dotenv.config();
@@ -43,6 +45,8 @@ mongoose
     app.listen(PORT, () => console.log(`API: ${PORT}`));
     // DUMMY DATA
     // User.insertMany(dataUser);
+    // Product.insertMany(dataProduct);
+    // ProductStat.insertMany(dataProductStat);
   })
   .catch((error) => {
     console.log(error);
