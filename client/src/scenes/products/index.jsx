@@ -38,17 +38,17 @@ const Product = ({
     >
       <CardContent>
         <Typography
-          sx={{ fontSize: 14 }}
-          color={theme.palette.secondary[700]}
+          sx={{ fontSize: '16px' }}
+          color={theme.palette.secondary[200]}
           gutterBottom
         >
-          {category}
+          Category: {category}
         </Typography>
         <Typography variant='h5' component='div'>
           {name}
         </Typography>
         <Typography sx={{ mb: '1.5rem' }} color={theme.palette.secondary[400]}>
-          {Number(price).toFixed(2)}
+          ${Number(price).toFixed(2)}
         </Typography>
         <Rating value={rating} readOnly />
         <Typography variant='body2'>{description}</Typography>
@@ -59,7 +59,7 @@ const Product = ({
           size='small'
           onClick={() => setIsExpanded(!isExpanded)}
         >
-          Details
+          View details
         </Button>
       </CardActions>
       <Collapse
