@@ -16,23 +16,24 @@ const Geography = () => {
       <Box
         mt='40px'
         height='75vh'
-        border={`1px solid ${theme.palette.secondary[200]}`}
+        border={`1px solid ${theme.palette.secondary[900]}`}
         borderRadius='4px'
+        backgroundColor={theme.palette.secondary[300]}
       >
         {data ? (
           <ResponsiveChoropleth
             data={data.formattedLocations}
             theme={{
+              textColor: 'black',
               axis: {
                 domain: {
                   line: {
                     stroke: theme.palette.secondary[200],
                   },
                 },
-
                 legend: {
                   text: {
-                    fill: theme.palette.secondary[200],
+                    fill: theme.palette.secondary[900],
                   },
                 },
                 ticks: {
@@ -41,24 +42,23 @@ const Geography = () => {
                     strokeWidth: 1,
                   },
                   text: {
-                    fill: theme.palette.secondary[200],
+                    fill: theme.palette.secondary[900],
                   },
                 },
               },
               legends: {
                 text: {
-                  fill: theme.palette.secondary[200],
+                  fill: theme.palette.secondary[300],
                 },
               },
               tooltip: {
                 container: {
-                  color: theme.palette.primary.main,
+                  color: theme.palette.secondary[200],
                 },
               },
             }}
             features={geoData.features}
             margin={{ top: 0, right: 0, bottom: 0, left: -50 }}
-            // colors='nivo'
             domain={[0, data.maxValue]}
             unknownColor='#666666'
             label='properties.name'
@@ -80,14 +80,14 @@ const Geography = () => {
                 itemWidth: 94,
                 itemHeight: 18,
                 itemDirection: 'left-to-right',
-                itemTextColor: theme.palette.secondary[200],
+                itemTextColor: theme.palette.primary[100],
                 itemOpacity: 0.85,
                 symbolSize: 18,
                 effects: [
                   {
                     on: 'hover',
                     style: {
-                      itemTextColor: theme.palette.background.alt,
+                      itemTextColor: 'black',
                       itemOpacity: 1,
                     },
                   },
